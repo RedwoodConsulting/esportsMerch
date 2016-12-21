@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, onInit } from '@angular/core';
+import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-user-signup',
-  templateUrl: './user-signup.component.html',
-  styleUrls: ['./user-signup.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class UserSignupComponent implements OnInit {
-
-  constructor() { }
-
+export class SignupFormComponent implements OnInit {
+  user: FormGroup;
   ngOnInit() {
+    this.user = new FormGroup({
+      name: new FormControl(''),
+      account: new FormGroup({
+        email: new FormControl(''),
+        confirm: new FormControl('')
+      })
+    });
   }
-
 }
