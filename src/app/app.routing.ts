@@ -7,6 +7,7 @@ import { UserLoginComponent } from "./user/user-login/user-login.component";
 import { StoreComponent } from "./store/store.component";
 import { StoreItemComponent } from "./store/store-item.component";
 import { ShoppingCartComponent } from "./store/shopping-cart.component";
+import { SignupFormComponent } from './user/user-signup/user-signup.component';
 
 const APP_ROUTES: Routes = [
 	//path = domainName + endpoint, i.e. www.esportsmerch.com/[some path]
@@ -26,6 +27,10 @@ const APP_ROUTES: Routes = [
 		path: 'userlogin',
 		component: UserLoginComponent
 	},
+  {
+    path: 'usersignup',
+    component: SignupFormComponent
+  },
 	{
 		path: 'userprofile',
 		component: UserComponent
