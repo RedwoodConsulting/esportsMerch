@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { routing } from "./app.routing";
@@ -12,7 +12,7 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
 import { StoreComponent } from './store/store.component';
 import { StoreItemComponent } from './store/store-item.component';
 import { ShoppingCartComponent } from "./store/shopping-cart.component";
-import { UserSignupComponent } from './user/user-signup/user-signup.component';
+import { SignupFormComponent } from './user/user-signup/user-signup.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +23,13 @@ import { UserSignupComponent } from './user/user-signup/user-signup.component';
     StoreComponent,
     StoreItemComponent,
     ShoppingCartComponent,
-    UserSignupComponent,
-    ReactiveFormsModule,
+    SignupFormComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
-    routing
+    routing,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
