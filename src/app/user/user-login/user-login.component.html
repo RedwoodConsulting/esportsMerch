@@ -1,4 +1,4 @@
-<form novalidate >
+<form novalidate (ngSubmit)="onSubmit(signin)" [formGroup]="signin" >
   <label>
     <span>Email Address Login</span>
     <input
@@ -6,6 +6,9 @@
       name="email"
       placeholder="Your email"
     >
+    <div class="error" *ngIf="signin.get('email').hasError('required') && signin.get('email').touched">
+      Email is required
+    </div>
   </label>
   <label>
     <span>Password</span>
@@ -13,6 +16,18 @@
       type="password"
       name="password"
     >
+    <div class="error" *ngIf="signin.get('password').hasError('required') && signin.get('password').touched">
+      Password is required
+    </div>
+    <div class="error" *ngIf="signin.get('password').hasError('minlength') && signin.get('password').touched">
+      Password must be at least 8 characters long
+    </div>
+    <div class="error" *ngIf="signin.get('password').hasError('minChar') && signin.get('password').touched">
+      It must contain at least one letter and one number
+    </div>
+    <div class="error" *ngIf="signin.get('password').hasError('minlength') && signin.get('password').touched">
+      It must contain special characters ie
+    </div>
   </label>
   <button type="submit">Login</button>
 </form>
